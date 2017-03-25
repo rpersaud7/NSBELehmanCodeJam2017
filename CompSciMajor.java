@@ -11,8 +11,8 @@ public class CompSciMajor extends Major{
 	private LinkedList<Classes> CompSciReq;
 	private LinkedList<Classes> CompSciCourses;
 	
-	public CompSciMajor(boolean declared, boolean decminor) throws FileNotFoundException{
-		super(declared);
+	public CompSciMajor(boolean decminor) throws FileNotFoundException{
+		super(true);
 		this.decminor = decminor; 
 		
 		try{
@@ -32,8 +32,8 @@ public class CompSciMajor extends Major{
 		}
 	}
 	
-	public CompSciMajor(File GenEd, File CompSciReq, File CompSciCourses, boolean declared, boolean decminor) throws FileNotFoundException {
-		super(GenEd, declared);
+	public CompSciMajor(File GenEd, File CompSciReq, File CompSciCourses, boolean decminor) throws FileNotFoundException {
+		super(GenEd, true);
 		this.decminor = decminor; 
 		
 		try{

@@ -11,8 +11,8 @@ public class MathMajor extends Major{
 	private LinkedList<Classes> MathReq;
 	private LinkedList<Classes> MathCourses;
 	
-	public MathMajor(boolean declared, boolean decminor) throws FileNotFoundException{
-		super(declared);
+	public MathMajor(boolean decminor) throws FileNotFoundException{
+		super(true);
 		this.decminor = decminor; 
 		
 		try{
@@ -32,8 +32,8 @@ public class MathMajor extends Major{
 		}
 	}
 	
-	public MathMajor(File GenEd, File MathReq, File MathCourses, boolean declared, boolean decminor) throws FileNotFoundException {
-		super(GenEd, declared);
+	public MathMajor(File GenEd, File MathReq, File MathCourses, boolean decminor) throws FileNotFoundException {
+		super(GenEd, true);
 		this.decminor = decminor; 
 		
 		try{

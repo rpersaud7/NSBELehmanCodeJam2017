@@ -6,7 +6,35 @@ import java.util.*;
 
 public class Major implements LehmanGenEdCourses{
 	private boolean declared; 
-	private LinkedList<String> GenEd; 
+	private LinkedList<String> GenEd;
+	
+	public Major() throws FileNotFoundException{
+		try{
+			Scanner r = new Scanner("LehmanGenEd.csv");
+			this.GenEd = new LinkedList<String>();
+			while(r.hasNext()){
+				this.GenEd.add(r.next());
+			}
+			r.close();
+		}
+		catch(Exception e){
+			throw e; 
+		}
+	}
+	
+	public Major(File GenEd) throws FileNotFoundException { 
+		try{
+			Scanner r = new Scanner(GenEd);
+			this.GenEd = new LinkedList<String>();
+			while(r.hasNext()){
+				this.GenEd.add(r.next());
+			}
+			r.close();
+		}
+		catch(Exception e){
+			throw e; 
+		}
+	}
 	
 	public Major(boolean declared) throws FileNotFoundException {
 		this.declared = declared;
