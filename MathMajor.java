@@ -9,7 +9,6 @@ public class MathMajor extends Major{
 
 	private boolean decminor; 
 	private LinkedList<Classes> MathReq;
-	private LinkedList<Classes> MathCourses;
 	
 	public MathMajor(boolean decminor) throws FileNotFoundException{
 		super(true);
@@ -23,7 +22,7 @@ public class MathMajor extends Major{
 			while(r.hasNext()){
 				studline = r.nextLine();
 				studsplit = studline.split(",");
-				this.MathReq.add(studsplit[0], studsplit[1], studsplit[2]);
+				this.MathReq.add(new Classes(studsplit[0], studsplit[1], Integer.parseInt(studsplit[2])));
 			}
 			r.close();
 		}
@@ -44,7 +43,7 @@ public class MathMajor extends Major{
 			while(r.hasNext()){
 				studline = r.nextLine();
 				studsplit = studline.split(",");
-				this.MathReq.add(studsplit[0], studsplit[1], studsplit[2]);
+				this.MathReq.add(new Classes(studsplit[0], studsplit[1], Integer.parseInt(studsplit[2])));
 			}
 			r.close();
 		}
@@ -69,5 +68,6 @@ public class MathMajor extends Major{
 	public void setDecMinor(boolean decminor){
 		this.decminor = decminor; 
 	}
+	
 }
-}
+

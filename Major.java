@@ -9,6 +9,7 @@ public class Major implements LehmanGenEdCourses{
 	private LinkedList<String> GenEd;
 	
 	public Major() throws FileNotFoundException{
+		this.declared = false;
 		try{
 			Scanner r = new Scanner("LehmanGenEd.csv");
 			this.GenEd = new LinkedList<String>();
@@ -23,6 +24,7 @@ public class Major implements LehmanGenEdCourses{
 	}
 	
 	public Major(File GenEd) throws FileNotFoundException { 
+		this.declared = false;
 		try{
 			Scanner r = new Scanner(GenEd);
 			this.GenEd = new LinkedList<String>();
@@ -79,6 +81,14 @@ public class Major implements LehmanGenEdCourses{
 			System.out.print(GenEd.get(z) + ", ");
 		}
 		System.out.print(GenEd.get(z+1));
+	}
+	
+	public boolean getDeclared(){
+		return declared;
+	}
+	
+	public void setDeclared(boolean declared){
+		this.declared = declared; 
 	}
 	
 }

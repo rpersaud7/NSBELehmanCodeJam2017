@@ -9,7 +9,6 @@ public class CompSciMajor extends Major{
 
 	private boolean decminor; 
 	private LinkedList<Classes> CompSciReq;
-	private LinkedList<Classes> CompSciCourses;
 	
 	public CompSciMajor(boolean decminor) throws FileNotFoundException{
 		super(true);
@@ -23,7 +22,7 @@ public class CompSciMajor extends Major{
 			while(r.hasNext()){
 				studline = r.nextLine();
 				studsplit = studline.split(",");
-				this.CompSciReq.add(studsplit[0], studsplit[1], studsplit[2]);
+				this.CompSciReq.add(new Classes(studsplit[0], studsplit[1], Integer.parseInt(studsplit[2])));
 			}
 			r.close();
 		}
@@ -44,7 +43,7 @@ public class CompSciMajor extends Major{
 			while(r.hasNext()){
 				studline = r.nextLine();
 				studsplit = studline.split(",");
-				this.CompSciReq.add(studsplit[0], studsplit[1], studsplit[2]);
+				this.CompSciReq.add(new Classes(studsplit[0], studsplit[1], Integer.parseInt(studsplit[2])));
 			}
 			r.close();
 		}
